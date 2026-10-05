@@ -51,6 +51,7 @@ services:
         target: /etc/mysql/conf.d/custom.cnf
     volumes:
       - db:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
     environment:
       TZ: Europe/Minsk
       MYSQL_ALLOW_EMPTY_PASSWORD: yes
