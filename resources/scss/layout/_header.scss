@@ -1,0 +1,36 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.header {
+  background: $surface;
+  border-bottom: 1px solid $line;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  &__logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    color: $accent;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  font-size: 15px;
+  color: $muted;
+
+  a:hover, a.is-active {
+    color: $ink;
+  }
+
+  @include sm {
+    display: none;
+  }
+}

@@ -1,0 +1,9 @@
+@use "../abstracts/variables" as *;
+
+.footer {
+  padding: 24px 0;
+  border-top: 1px solid $line;
+  background: $surface;
+  color: $muted;
+  font-size: 14px;
+}

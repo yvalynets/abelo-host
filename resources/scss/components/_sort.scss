@@ -1,0 +1,29 @@
+@use "../abstracts/variables" as *;
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  font-size: 15px;
+  color: $muted;
+}
+
+.sort {
+  padding: 6px 14px;
+  border: 1px solid $line;
+  border-radius: 8px;
+  background: $surface;
+  color: $ink;
+
+  &:hover {
+    border-color: $accent;
+  }
+
+  &.is-active {
+    background: $ink;
+    border-color: $ink;
+    color: #fff;
+  }
+}

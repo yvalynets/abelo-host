@@ -1,0 +1,22 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.page-head {
+  margin-bottom: 28px;
+
+  &__title {
+    font-size: 40px;
+    line-height: 1.15;
+    letter-spacing: -.02em;
+    margin-bottom: 10px;
+    @include sm {
+      font-size: 30px;
+    }
+  }
+
+  &__desc {
+    color: $muted;
+    font-size: 18px;
+    max-width: 65ch;
+  }
+}

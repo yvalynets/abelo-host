@@ -1,0 +1,36 @@
+@use "../abstracts/variables" as *;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 40px;
+
+  a, span {
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $line;
+    border-radius: 8px;
+    background: $surface;
+  }
+
+  a:hover {
+    border-color: $accent;
+    color: $accent;
+  }
+
+  .is-current {
+    background: $accent;
+    border-color: $accent;
+    color: #fff;
+  }
+
+  .is-disabled {
+    color: $line;
+  }
+}

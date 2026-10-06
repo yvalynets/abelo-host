@@ -1,0 +1,15 @@
+@use "../abstracts/variables" as *;
+
+.crumbs {
+  font-size: 14px;
+  color: $muted;
+  margin-bottom: 16px;
+
+  a:hover {
+    color: $accent;
+  }
+
+  span {
+    margin: 0 6px;
+  }
+}
