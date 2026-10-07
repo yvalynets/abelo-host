@@ -6,8 +6,8 @@ namespace App\Controllers;
 
 use App\Repositories\ArticleRepository;
 use App\Repositories\CategoryRepository;
+use Exception;
 use PDO;
-use Smarty\Exception;
 use Smarty\Smarty;
 
 class HomeController
@@ -26,13 +26,15 @@ class HomeController
 
     public function index(): void
     {
-        $limit = $this->config['app']['home']['per_category'];
-
         $categories = $this->categories->findNonEmpty();
 
         $articlesByCategory = [];
         foreach ($categories as $category) {
-            $articlesByCategory[$category['id']] = $this->articles->latestByCategory($category['id'], $limit);
+            $articlesByCategory[$category['id']] = $this->articles->getByCategory(
+                $category['id'],
+                $this->config['app']['home']['sort_by'],
+                $this->config['app']['home']['per_category']
+            );
         }
 
         try {

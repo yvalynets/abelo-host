@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use App\Enums\ArticleSort;
+
 return [
     'db' => [
         'host' => getenv('DB_HOST') ?: 'db',
@@ -15,15 +17,15 @@ return [
     'app' => [
         'home' => [
             'per_category' => 3,
-            'sort_by' => 'date',
+            'sort_by' => ArticleSort::Date,
         ],
         'category' => [
             'per_page' => 6,
-            'sort_by' => 'date',
+            'sort_by' => ArticleSort::Date,
         ],
         'article' => [
             'similar_count' => 3,
-            'sort_by' => 'views',
+            'similar_sort_by' => ArticleSort::Views,
         ],
     ],
 ];

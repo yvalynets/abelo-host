@@ -10,7 +10,9 @@
         <h3 class="card__title">
             <a href="/article/{$article.id}">{$article.title}</a>
         </h3>
-        <p class="card__text">{$article.description}</p>
+        {if isset($article.description)}
+            <p class="card__text">{$article.description}</p>
+        {/if}
         <div class="card__meta">
             <span>{$article.created_at|date_format:'%d.%m.%Y'}</span>
             <span>{$article.views} просмотров</span>

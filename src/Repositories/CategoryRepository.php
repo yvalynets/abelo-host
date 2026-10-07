@@ -26,4 +26,19 @@ class CategoryRepository
 
         return $this->pdo->query($sql)->fetchAll();
     }
+
+    public function findByArticle(int $articleId): array
+    {
+        $statement = $this->pdo->prepare(
+            'SELECT c.id, c.name
+             FROM categories c
+                JOIN article_category ac ON ac.category_id = c.id
+             WHERE ac.article_id = :aid
+             ORDER BY c.name'
+        );
+        $statement->bindValue(':aid', $articleId, PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
 }
