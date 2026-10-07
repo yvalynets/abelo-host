@@ -44,7 +44,6 @@ class ArticleController
         );
 
         try {
-            $this->smarty->assign('title', $article['title']);
             $this->smarty->assign('article', $article);
             $this->smarty->assign('categories', $this->categories->findByArticle($id));
             $this->smarty->assign('similar', $similar);

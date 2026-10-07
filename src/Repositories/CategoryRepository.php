@@ -13,6 +13,19 @@ class CategoryRepository
     ) {
     }
 
+    public function findById(int $id): ?array
+    {
+        $statement = $this->pdo->prepare(
+            'SELECT id, name, description
+             FROM categories
+             WHERE id = :id'
+        );
+        $statement->bindValue(':id', $id, PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetch() ?: null;
+    }
+
     public function findNonEmpty(): array
     {
         $sql = 'SELECT c.id, c.name, c.description
