@@ -58,7 +58,7 @@ try {
     for ($i = 1; $i <= $categoriesCount; $i++) {
         $insCategory->execute([
             'name' => rtrim($faker->sentence(2), '.!?,… '),
-            'description' => $faker->paragraph(),
+            'description' => rand(1, 10) > 3 ? $faker->paragraph() : null, // 20% без описания
         ]);
         if (rand(1, 10) > 1) { // 10% категорий пустые
             $categoryIds[] = (int)$pdo->lastInsertId();
