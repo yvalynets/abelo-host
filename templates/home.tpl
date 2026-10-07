@@ -18,5 +18,9 @@
                 {/foreach}
             </div>
         </section>
+        {foreachelse}
+        <section class="section">
+            <p class="section__desc">Нет категорий</p>
+        </section>
     {/foreach}
 {/block}
