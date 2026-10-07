@@ -7,7 +7,7 @@
         <nav class="crumbs">
             <a href="/">Главная</a>
             <span>/</span>
-            <a href="/categories/{$categories[0].id}">{$categories[0].name}</a>
+            <a href="/category/{$categories[0].id}">{$categories[0].name}</a>
             <span>/</span>
             {$article.title}
         </nav>
